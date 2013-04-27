@@ -1,0 +1,185 @@
+setpx(n)
+  unit(n, unit(n) == '%' ? '% ' : 'px ' )
+
+// padding / margin
+pd()  
+  n = ''
+  for num in arguments
+    n = n + setpx(num)
+  padding: unquote(n)
+pdl(n)
+  padding-left:setpx(n)
+pdr(n)
+  padding-right:setpx(n)
+pdt(n)
+  padding-top:setpx(n)
+pdb(n)
+  padding-bottom:setpx(n)
+
+mg()
+  n = ''
+  for num in arguments
+    n = n + setpx(num)
+  margin: unquote(n)
+mg0a()
+  margin:0 auto;  
+mgl(n)
+  margin-left:setpx(n)
+mgr(n)
+  margin-right:setpx(n)
+mgt(n)
+  margin-top:setpx(n)
+mgb(n)
+  margin-bottom:setpx(n)
+
+
+// width/height
+w(n)
+  width: setpx(n)
+h(n)  
+  height: setpx(n)
+wh()
+  if length( arguments ) == 1
+    w:arguments[0];h:arguments[0];
+  else 
+    w:arguments[0];h:arguments[1];
+
+// position
+top(n)
+  top:setpx(n)
+right(n)
+  right:setpx(n)
+bottom(n)
+  bottom:setpx(n)
+left(n)
+  left:setpx(n)
+
+pos(x)
+  if x == 'a'
+    position:absolute
+  else if x == 'r'
+    position:relative
+  else if x == 'f'
+    position:fixed
+  else
+    position:static
+
+posxy(p, x, y)
+  pos:p;left:x;top:y;
+posa0()
+  pos:a;top:0;left:0;bottom:0;right:0;
+
+// border
+bd(n, args...)
+  border : n == 0 ? 0 : setpx(n) args;
+bdb(n, args...)
+  border-bottom : n == 0 ? 0 : setpx(n) args;  
+bdt(n, args...)
+  border-top : n == 0 ? 0 : setpx(n) args;  
+bdl(n, args...)
+  border-left : n == 0 ? 0 : setpx(n) args;  
+bdr(n, args...)
+  border-right : n == 0 ? 0 : setpx(n) args;  
+
+bdrd()
+  n = ''
+  for num in arguments
+    n = n + setpx(num)
+  border-radius: unquote(n);
+
+// background
+bg()
+  if length(arguments) == 1
+    if arguments[0] is a 'color'
+      background-color : arguments[0] ;
+    else
+      background: url( arguments[0] ) no-repeat
+  else if length(arguments) == 2 && arguments[1] == 'r'
+    background: url( arguments[0] ) repeat
+  else
+    background: url( arguments[0] ) setpx(arguments[1]) setpx(arguments[2]) no-repeat
+bgp(x, y)
+  background-position: setpx(x) setpx(y)
+
+// float/clear
+fl(x)
+  if x == 'l'
+    float:left;  
+  else if x == 'r'
+    float:right;
+  else
+    float:none;
+
+cl(x)
+  if x == 'l'
+    clear:left    
+  else if x == 'r'    
+    clear:right;
+  else
+    clear:both
+
+// text-align;
+ta(x)
+  if x == 'c'
+    text-align:center;  
+  else if x == 'r'
+    text-align:right;
+  else if x == 'l'
+    text-align:left;
+
+// font
+fz(n)
+  font-size: setpx(n)
+
+fw(x)
+  if x == 'b'
+    font-weight 700
+  else if x == 'n'
+    font-weight 300
+
+co(n)
+  color:n
+
+lh(n)
+  line-height n
+
+// text
+td(x)
+  if x == 'n'
+    text-decoration: none
+  else if x = 'u'
+    text-decoration: underline;
+ls(n)
+  letter-spacing : setpx(n)
+  
+va(x)
+  if x == 'm'
+    vertical-align:middle
+  else if x == 't'
+    vertical-align:top
+  else if x == 'b'
+    vertical-align:bottom
+  else
+    vertical-align:setpx(x)
+
+// display
+dp(x)
+  if x == 'b'
+    display: block
+  else if x == 'i'
+    display: inline;
+  else if x == 'ib'
+    display: inline-block;
+  else if x == 't'
+    display: table;
+
+
+// content
+ct(txt)
+  content:txt
+
+// css3 transition
+
+ts(x)
+  -webkit-transition: x
+  transition: x
