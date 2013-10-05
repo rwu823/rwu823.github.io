@@ -14,7 +14,10 @@
 
 ga('create', 'UA-4476856-21', 'rwu823.github.io');
 ga('send', 'pageview');
-</script><script src="//rwu-blog.disqus.com/embed.js"></script><script>'use strict'
+</script><script>'use strict'
+if( !/^localhost/i.test(location.host) ){
+  seajs.use('//rwu-blog.disqus.com/embed.js')
+}
 seajs.use('/lib/js/load', function(load){
   load.codemirror({
     runmode : true

@@ -1,0 +1,62 @@
+<!DOCTYPE html><meta charset="utf-8"><link rel="stylesheet" href="/lib/css/normalize.css"><link rel="stylesheet" href="/blog/home.css"><link rel="shortcut icon" href="/blog/favicon.png"><title>指尖上的前端 - [教學] 用 NodeJS 編譯 Blog 到 Github (一)</title><div id="main"><header><div id="hd"> <div id="title"><h1> <a href="/blog/index.htm">指尖上的前端</a></h1></div><input id="sh" placeholder="Search blog"></div></header><div id="bd"><div id="content"><aside> <img id="avatar" src="/blog/avatar.png" alt="RoCky Wu" title="RoCky Wu"></aside><article><div id="article-post"><div class="article-hd"><h2 class="_title">[教學] 用 NodeJS 編譯 Blog 到 Github (一)</h2><div class="_time">2013/10/2</div><div class="_tags"><span>NodeJS</span><span>Javascript</span></div></div><div id="article-post-main"><p>因有許多朋友有興趣並詢問如何在 GitHub 搭建自己的部落格,
+這邊我會把自己建站的過程與資訊一併整理出來
+</p><h3>為什麼要把部落格建立在 Github 上</h3><p>現今網路上已有許多的免費部落格：
+<a href="http://www.pixnet.net/">PIXNET</a>, 
+<a href="http://xuite.net/">Xuite</a>, 
+<a href="www.blogger.com/start?hl=zh-TW">Blogger</a>, 
+<a href="http://wordpress.com/">WordPress</a>... 等 <br>
+很多人也許不明白，這樣做的好處是什麼，以下列舉幾項我認為特別突出的優點：
+</p><div class="_dot">渾然天成的 Git 版本控制</div><p>有在寫 code 的人一定都明白版本控制的重要利與便利性 <br>
+光是這點，我看就可打趴所有的主流部落格營運商了:)
+</p><div class="_dot">易於備份的文章</div><p>看著最近 "Google Reader" 與 "無名" 吹著熄燈的號角，就不禁感嘆天下無不散的宴席<br>
+我們果然不能太依賴免費服務阿<br>
+所以這樣建站的好處是所有的文章與原始碼全都存放在自己 local 端上<br>
+未來如果營運商宣布不經營的話，隨便找台主機再 update 上就又復活囉
+</p><div class="_dot">可在自己最愛的 Edtor 上編寫</div><p>一般線上的部落格，發表文章都是用他們自己的後台系統 <br>
+這樣造成的不便是可想而知的，每次發表與更新都要進到繁鎖的管理系統<br>
+實在是非常沒效率阿 :(<br>
+而這樣的反差在自己編譯部落格後儼然成為一種強烈的對比<br>
+編輯器打開後隨寫隨存 :)<br>
+若再搭配 <a href="https://www.dropbox.com/">Dropbox</a> 類的同步軟體，就可以在任何地方同步
+</p><div class="_dot">完全客製化</div><p>正所謂「我的部落格我作主」<br>
+一般線上部落格雖然有提供幾套 themes 可選，但很難找到自己喜歡的<br>
+或是很容易跟別人的主題一模一樣變得沒特色<br>
+雖然很多後台都有提供 CSS 修改，但還是一樣要繁鎖的進入管理介面去做修改<br>
+再說我相信一個有追求與潔癖的工程師都會很難忍受，頁面上有任何不屬於自已的 code
+</p><div class="_dot">超酷的 domain</div><p>現今 GitHub 已經成為工程師的身份証 ID <br>
+我個人也非常喜歡 your_id.github.io 的形式 :) <br>
+又可免費搭上愈來愈夯的 .io 域名列車 <br>
+但如果真的不喜歡 Github 的 domain 要換上自己的也是 ok 的拉
+</p><p>優點就大概介紹到這邊，下一章節會正式進入實作
+</p><div class="slogan">TO BE CONTINUED</div></div></div><div id="disqus_thread"></div></article></div></div><footer></footer></div><script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script><script src="http://cdn.staticfile.org/seajs/2.1.1/sea.js"></script><script>seajs
+  .use('/blog/init.js')
+  .use('/lib/js/socket-reload')
+  </script><script>;(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-4476856-21', 'rwu823.github.io');
+ga('send', 'pageview');
+</script><script>'use strict'
+if( !/^localhost/i.test(location.host) ){
+  seajs.use('//rwu-blog.disqus.com/embed.js')
+}
+seajs.use('/lib/js/load', function(load){
+  load.codemirror({
+    runmode : true
+  }, function(){
+  
+    var type = {
+      js : 'text/javascript'
+    }
+    
+    $('#article-post-main ._code').each(function(){
+      var $this = $(this)              
+      
+      $this.addClass('cm-s-default')
+      CodeMirror.runMode( $this.text(), type[$this.attr('type')], this );
+      
+    })
+  })
+})</script>

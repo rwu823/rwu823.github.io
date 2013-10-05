@@ -103,28 +103,28 @@ bgp(x, y)
 
 // float/clear
 fl(x)
-  if x == 'l'
+  if x == l
     float:left;  
-  else if x == 'r'
+  else if x == r
     float:right;
   else
     float:none;
 
 cl(x)
-  if x == 'l'
+  if x == l
     clear:left    
-  else if x == 'r'    
+  else if x == r    
     clear:right;
   else
     clear:both
 
 // text-align;
 ta(x)
-  if x == 'c'
+  if x == c
     text-align:center;  
-  else if x == 'r'
+  else if x == r
     text-align:right;
-  else if x == 'l'
+  else if x == l
     text-align:left;
 
 // font
@@ -132,15 +132,15 @@ fz(n)
   font-size: setpx(n)
 
 fs(x)
-  if x == 'i'
+  if x == i
     font-style: italic
-  else if x  == 'n'
+  else if x  == n
     font-style: normal
 
 fw(x)
-  if x == 'b'
+  if x == b
     font-weight 700
-  else if x == 'n'
+  else if x == n
     font-weight 300
 
 co(n)
@@ -151,34 +151,58 @@ lh(n)
 
 // text
 td(x)
-  if x == 'n'
+  if x == n
     text-decoration: none
-  else if x = 'u'
+  else if x = u
     text-decoration: underline;
 ls(n)
   letter-spacing : setpx(n)
   
 va(x)
-  if x == 'm'
+  if x == m
     vertical-align:middle
-  else if x == 't'
+  else if x == t
     vertical-align:top
-  else if x == 'b'
+  else if x == b
     vertical-align:bottom
   else
     vertical-align:setpx(x)
 
 // display
 dp(x)
-  if x == 'b'
+  if x == b
     display: block
-  else if x == 'i'
+  else if x == i
     display: inline;
-  else if x == 'ib'
+  else if x == ib
     display: inline-block;
-  else if x == 't'
+  else if x == t
     display: table;
 
+// overflow
+of(x)
+  if x == h
+    overflow :hidden
+  else if x == s
+    overflow :scroll
+  else if x == a
+    overflow :auto
+
+ofy(x)
+  if x == h
+    overflow-y: hidden
+  else if x == s
+    overflow-y: scroll
+  else if x == a
+    overflow-y: auto
+
+ofx(x)
+  if x == h
+    overflow-x :hidden
+  else if x == s
+    overflow-x :scroll
+  else if x == a
+    overflow-x :auto
 
 // content
 ct(txt)
@@ -189,3 +213,4 @@ ct(txt)
 ts(x)
   -webkit-transition: x
   transition: x
+
