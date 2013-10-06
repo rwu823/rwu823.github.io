@@ -1,0 +1,47 @@
+<!DOCTYPE html><meta charset="utf-8"><link rel="stylesheet" href="/lib/css/normalize.css"><link rel="stylesheet" href="/blog/home.css"><link rel="shortcut icon" href="/blog/favicon.png"><title>指尖上的前端 - [教學] 用 NodeJS 編譯 Blog 到 Github (二)</title><div id="main"><header><div id="hd"> <div id="title"><h1> <a href="/blog/index.htm">指尖上的前端</a></h1></div><input id="sh" placeholder="Search blog"></div></header><div id="bd"><div id="content"><aside> <img id="avatar" src="/blog/avatar.png" alt="RoCky Wu" title="RoCky Wu"></aside><article><div id="article-post"><div class="article-hd"><h2 class="_title">[教學] 用 NodeJS 編譯 Blog 到 Github (二)</h2><div class="_time">2013/10/5</div><div class="_tags"><span>NodeJS</span><span>Javascript</span></div></div><div id="article-post-main"><p>在上一章節 <a href="/blog/post/2013/10/2/build-blog-on-github-1.htm">[教學] 用 NodeJS 編譯 Blog 到 Github (一)</a> 裡我們提到了為什麼要與其優點<br>
+這章節先來談談網上一些流行的玩法
+</p><h3>Github 官方推薦的 Jekyll</h3><p><a href="http://jekyllrb.com/">jekyll</a> 是 Github 官方推薦的靜態部落格編輯譯方式，這是 base on Ruby 的專案<br>
+所以運行時電腦要先安裝 Ruby <br>
+另外一個類似的是 <a href="http://octopress.org/">Octopress</a> 這是基於 <a href="http://jekyllrb.com/">jekyll</a> 的<br>
+所以理論上二種應該大同小異<br>
+因個人對 Ruby 比較沒有深厚的感情，故 survey 時就略過這個方案
+</p><h3>NodeJS Way</h3><p>身為前端健兒，當然希望可以用 JS 的方式去完成，於是搜尋一下<br>
+果然已經有許多前進寫好的 Module 方案: <br>
+</p><ul class="_disc"><li><a href="http://zespia.tw/hexo/">Hexo</a></li><li><a href="http://jsantell.github.io/poet/">Poet</a></li><li><a href="http://docpad.org/">DocPod</a></li><li>...</li></ul><p>真是超多阿 不勝枚舉<br>
+雖然可選擇的方案很多，看了一圈後覺得有些稍嫌複雜<br>
+而且需要按照別人的架構/目錄與思路去建構就會讓人有些不爽 :p<br>
+於是乎就興起來自己動手的念頭<br>
+OK! 來吧
+</p><p>不過就先到這邊吧，其他的待下章解說 :p
+</p><div class="slogan">TO BE CONTINUED</div></div></div><div id="disqus_thread"></div></article></div></div><footer></footer></div><script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script><script src="http://cdn.staticfile.org/seajs/2.1.1/sea.js"></script><script>seajs
+  .use('/blog/init.js')
+  .use('/lib/js/socket-reload')
+  </script><script>;(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-4476856-21', 'rwu823.github.io');
+ga('send', 'pageview');
+</script><script>'use strict'
+if( !/^localhost/i.test(location.host) ){
+  seajs.use('//rwu-blog.disqus.com/embed.js')
+}
+seajs.use('/lib/js/load', function(load){
+  load.codemirror({
+    runmode : true
+  }, function(){
+  
+    var type = {
+      js : 'text/javascript'
+    }
+    
+    $('#article-post-main pre._code').each(function(){
+      var $this = $(this)              
+      
+      $this.addClass('cm-s-default')
+      CodeMirror.runMode( $this.text(), type[$this.attr('type')], this );
+      
+    })
+  })
+})</script>
