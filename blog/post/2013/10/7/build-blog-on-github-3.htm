@@ -1,0 +1,58 @@
+<!DOCTYPE html><meta charset="utf-8"><link rel="stylesheet" href="/lib/css/normalize.css"><link rel="stylesheet" href="/blog/home.css"><link rel="shortcut icon" href="/blog/favicon.png"><title>指尖上的前端 - [教學] 用 NodeJS 編譯 Blog 到 Github (三)</title><div id="main"><header><div id="hd"> <div id="title"><h1> <a href="/blog/index.htm">指尖上的前端</a></h1></div><input id="sh" placeholder="Search blog"></div></header><div id="bd"><div id="content"><aside> <img id="avatar" src="/blog/avatar.png" alt="RoCky Wu" title="RoCky Wu"></aside><article><div id="article-post"><div class="article-hd"><h2 class="_title">[教學] 用 NodeJS 編譯 Blog 到 Github (三)</h2><div class="_time">2013/10/7</div><div class="_tags"><span>NodeJS</span><span>Javascript</span></div></div><div id="article-post-main"><p>這篇會開始進入一些事前準備工作，會一步步教大家把需要的東西安裝好 <br>
+看到這邊假定你已經有使用過 git 與 Javascript 基礎<br>
+如果先前已經有玩過 github 與 NodeJS 可以直接跳到第4步驟 :
+</p><h3>1) 申請 Github 帳號</h3><p>當然一開始最先要有的就是 <a href="https://github.com">Github</a> 帳號 <br>
+直接到官網申請就好，這邊就不多做贅敘了
+</p><h3>2) 了解 Github Pages</h3><p><a href="http://pages.github.com/">Github Pages</a> 其實就是 Github 上的 Host<br>    
+要建立自己的 Github Pages 也相當簡單 <br>
+只要在自己的帳號下創個 <span class="_code">your_id.github.io</span> 的 Repository 即可
+</p><h3>3) 安裝 NodeJS</h3><p><a href="http://nodejs.org/download/">NodeJS download</a> 到這邊可以選擇自己適合的環境，我這篇以 Window 為例 <br>
+Window 上的安裝非常簡單，一直 <span class="_code">下一步</span> 就好<br>
+安裝完後我們可以開啟 cmd 測試一下是否成功:
+</p><pre type="sh" class="_code"># 查詢 NodeJS 版本
+$ node -v
+v.0.10.20
+</pre><pre type="sh" class="_code"># 查詢 npm 版本
+$ npm -v
+1.3.11
+</pre><p>如果順利出現版本號，表示安裝成功
+</p><h3>4) 安裝 NodeJS Module</h3><p>這邊我們採用 <span class="_code">Jade</span> <span class="_code">Stylus</span> 來快速編寫<br>
+<a href="http://jade-lang.com/">Jade</a> <br>
+<a href="http://learnboost.github.io/stylus/">Stylus</a>
+</p><pre type="sh" class="_code">$ npm install jade
+$ npm install stylus
+</pre><p>等待 <span class="_code">npm</span> 提示安裝完成後，就可以用 JavaScript 編寫我們要的部落格了
+</p><div class="slogan">TO BE CONTINUED</div></div></div><div id="disqus_thread"></div></article></div></div><footer></footer></div><script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script><script src="http://cdn.staticfile.org/seajs/2.1.1/sea.js"></script><script>seajs
+  .use('/blog/init.js')
+  .use('/lib/js/socket-reload')
+  </script><script>;(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-4476856-21', 'rwu823.github.io');
+ga('send', 'pageview');
+</script><script>'use strict'
+if( !/^localhost/i.test(location.host) ){
+  seajs.use('//rwu-blog.disqus.com/embed.js')
+}
+seajs.use('/lib/js/load', function(load){
+  load.codemirror({
+    runmode : true
+  }, function(){
+  
+    var type = {
+      js : 'text/javascript',
+      sh : 'text/x-sh',
+      css : 'text/css'
+    }
+    
+    $('#article-post-main pre._code').each(function(){
+      var $this = $(this)              
+      
+      $this.addClass('cm-s-default')
+      CodeMirror.runMode( $this.text(), type[$this.attr('type')], this );
+      
+    })
+  })
+})</script>
