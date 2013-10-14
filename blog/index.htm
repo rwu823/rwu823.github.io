@@ -28,8 +28,10 @@ ga('send', 'pageview');
       })([])
     },
     success: function (j) {
+      var res = j.response,
+          resLen = res.length
       $('._counts', $articles).each(function(i){
-        $(this).text( j.response[i].posts )
+        $(this).text(res[resLen - i - 1].posts)
       })
     }
   })
