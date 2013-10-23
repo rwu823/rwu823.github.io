@@ -1,4 +1,4 @@
-<!DOCTYPE html><meta charset="utf-8"><link rel="stylesheet" href="/lib/css/normalize.css"><link rel="stylesheet" href="/blog/home.css"><link rel="shortcut icon" href="/blog/favicon.png"><title>指尖上的前端 - [教學] 用 NodeJS 編譯 Blog 到 Github (二)</title><div id="main"><header><div id="hd"> <div id="title"><h1> <a href="/blog/index.htm">指尖上的前端</a></h1></div><input id="sh" placeholder="Search blog"></div></header><div id="bd"><div id="content"><aside> <img id="avatar" src="/blog/avatar.png" alt="RoCky Wu" title="RoCky Wu"></aside><article><div id="article-post"><div class="article-hd"><h2 class="_title">[教學] 用 NodeJS 編譯 Blog 到 Github (二)</h2><div class="_time">2013/10/5</div><div class="_tags"><span>NodeJS</span><span>Javascript</span></div></div><div id="article-post-main"><p>在上一章節 <a href="/blog/post/2013/10/2/build-blog-on-github-1.htm">[教學] 用 NodeJS 編譯 Blog 到 Github (一)</a> 裡我們提到了為什麼要與其優點<br>
+<!DOCTYPE html><meta charset="utf-8"><link rel="stylesheet" href="/lib/css/normalize.css"><link rel="stylesheet" href="/blog/home.css"><link rel="shortcut icon" href="/blog/favicon.png"><title>指尖上的前端 - [教學] 用 NodeJS 編譯 Blog 到 Github (二)</title><div id="main"><header><div id="hd"> <div id="title"><h1> <a href="/blog/index.htm">指尖上的前端</a></h1></div><input id="sh" placeholder="Search blog"></div></header><div id="bd"><div id="content"><aside> <img id="avatar" src="/blog/avatar.png" alt="RoCky Wu" title="RoCky Wu"></aside><article><div id="article-post"><div class="article-hd"><h2 class="_title">[教學] 用 NodeJS 編譯 Blog 到 Github (二)</h2><div class="_time">2013/10/5</div><div class="_tag"><span class="_tags">NodeJS</span><span class="_tags">Javascript</span></div></div><div id="article-post-main"><p>在上一章節 <a href="/blog/post/2013/10/2/build-blog-on-github-1.htm">[教學] 用 NodeJS 編譯 Blog 到 Github (一)</a> 裡我們提到了為什麼要與其優點<br>
 這章節先來談談網上一些流行的玩法
 </p><h3>Github 官方推薦的 Jekyll</h3><p><a href="http://jekyllrb.com/">jekyll</a> 是 Github 官方推薦的靜態部落格編輯譯方式，這是 base on Ruby 的專案<br>
 所以運行時電腦要先安裝 Ruby <br>
@@ -33,7 +33,10 @@ seajs.use('/lib/js/load', function(load){
   }, function(){
   
     var type = {
-      js : 'text/javascript'
+      js: 'text/javascript',
+      htm: 'text/html',
+      sh: 'text/x-sh',
+      css: 'text/css'
     }
     
     $('#article-post-main pre._code').each(function(){

@@ -1,4 +1,4 @@
-<!DOCTYPE html><meta charset="utf-8"><link rel="stylesheet" href="/lib/css/normalize.css"><link rel="stylesheet" href="/blog/home.css"><link rel="shortcut icon" href="/blog/favicon.png"><title>指尖上的前端 - The First</title><div id="main"><header><div id="hd"> <div id="title"><h1> <a href="/blog/index.htm">指尖上的前端</a></h1></div><input id="sh" placeholder="Search blog"></div></header><div id="bd"><div id="content"><aside> <img id="avatar" src="/blog/avatar.png" alt="RoCky Wu" title="RoCky Wu"></aside><article><div id="article-post"><div class="article-hd"><h2 class="_title">The First</h2><div class="_time">2013/9/29</div><div class="_tags"><span>Life</span></div></div><div id="article-post-main"><p>折騰了好久，終於用 <a href="http://pages.github.com/"> GitHub Pages </a> 開博了，
+<!DOCTYPE html><meta charset="utf-8"><link rel="stylesheet" href="/lib/css/normalize.css"><link rel="stylesheet" href="/blog/home.css"><link rel="shortcut icon" href="/blog/favicon.png"><title>指尖上的前端 - The First</title><div id="main"><header><div id="hd"> <div id="title"><h1> <a href="/blog/index.htm">指尖上的前端</a></h1></div><input id="sh" placeholder="Search blog"></div></header><div id="bd"><div id="content"><aside> <img id="avatar" src="/blog/avatar.png" alt="RoCky Wu" title="RoCky Wu"></aside><article><div id="article-post"><div class="article-hd"><h2 class="_title">The First</h2><div class="_time">2013/9/29</div><div class="_tag"><span class="_tags">Life</span></div></div><div id="article-post-main"><p>折騰了好久，終於用 <a href="http://pages.github.com/"> GitHub Pages </a> 開博了，
 這次走的是扁平化的簡約風格 :) <br>
 
 深深體會到這才是身為一個 programmer 最高效寫作的方式阿 <br>
@@ -24,10 +24,13 @@ seajs.use('/lib/js/load', function(load){
   }, function(){
   
     var type = {
-      js : 'text/javascript'
+      js: 'text/javascript',
+      htm: 'text/html',
+      sh: 'text/x-sh',
+      css: 'text/css'
     }
     
-    $('#article-post-main ._code').each(function(){
+    $('#article-post-main pre._code').each(function(){
       var $this = $(this)              
       
       $this.addClass('cm-s-default')

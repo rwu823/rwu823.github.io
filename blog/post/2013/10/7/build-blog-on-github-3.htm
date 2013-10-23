@@ -1,4 +1,4 @@
-<!DOCTYPE html><meta charset="utf-8"><link rel="stylesheet" href="/lib/css/normalize.css"><link rel="stylesheet" href="/blog/home.css"><link rel="shortcut icon" href="/blog/favicon.png"><title>指尖上的前端 - [教學] 用 NodeJS 編譯 Blog 到 Github (三)</title><div id="main"><header><div id="hd"> <div id="title"><h1> <a href="/blog/index.htm">指尖上的前端</a></h1></div><input id="sh" placeholder="Search blog"></div></header><div id="bd"><div id="content"><aside> <img id="avatar" src="/blog/avatar.png" alt="RoCky Wu" title="RoCky Wu"></aside><article><div id="article-post"><div class="article-hd"><h2 class="_title">[教學] 用 NodeJS 編譯 Blog 到 Github (三)</h2><div class="_time">2013/10/7</div><div class="_tags"><span>NodeJS</span><span>Javascript</span></div></div><div id="article-post-main"><p>這篇會開始進入一些事前準備工作，會一步步教大家把需要的東西安裝好 <br>
+<!DOCTYPE html><meta charset="utf-8"><link rel="stylesheet" href="/lib/css/normalize.css"><link rel="stylesheet" href="/blog/home.css"><link rel="shortcut icon" href="/blog/favicon.png"><title>指尖上的前端 - [教學] 用 NodeJS 編譯 Blog 到 Github (三)</title><div id="main"><header><div id="hd"> <div id="title"><h1> <a href="/blog/index.htm">指尖上的前端</a></h1></div><input id="sh" placeholder="Search blog"></div></header><div id="bd"><div id="content"><aside> <img id="avatar" src="/blog/avatar.png" alt="RoCky Wu" title="RoCky Wu"></aside><article><div id="article-post"><div class="article-hd"><h2 class="_title">[教學] 用 NodeJS 編譯 Blog 到 Github (三)</h2><div class="_time">2013/10/7</div><div class="_tag"><span class="_tags">NodeJS</span><span class="_tags">Javascript</span></div></div><div id="article-post-main"><p>這篇會開始進入一些事前準備工作，會一步步教大家把需要的東西安裝好 <br>
 看到這邊假定你已經有使用過 git 與 Javascript 基礎<br>
 如果先前已經有玩過 github 與 NodeJS 可以直接跳到第4步驟 :
 </p><h3>1) 申請 Github 帳號</h3><p>當然一開始最先要有的就是 <a href="https://github.com">Github</a> 帳號 <br>
@@ -42,9 +42,10 @@ seajs.use('/lib/js/load', function(load){
   }, function(){
   
     var type = {
-      js : 'text/javascript',
-      sh : 'text/x-sh',
-      css : 'text/css'
+      js: 'text/javascript',
+      htm: 'text/html',
+      sh: 'text/x-sh',
+      css: 'text/css'
     }
     
     $('#article-post-main pre._code').each(function(){
