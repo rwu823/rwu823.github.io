@@ -81,9 +81,14 @@
   #phone-notification-bar{height: 22px;background: #000;color: #fff;padding:0 8px;}
   #phone-notification-bar ._time { float: right;margin-top: 5px;width: 40px;text-align: right; }
   #phone-notification-bar ._time ._am-pm{ font-size: 10px;}
-  #phone-view {height: 505px;background: #ADAD5B;position: relative;}
+  #phone-view {height: 505px;position: relative;
+    background: url(./img/wallpaper.jpg) no-repeat; background-size: 100% 100%;
+  }
   #phone-view .font-icon{ font-size: 50px;text-align: center;color: #eee;margin-top: 5px;}
   #phone-view ._widget-clock { height: 120px;}
+  #phone-view ._widget-clock ._clock{ color:#fff;text-shadow:0 0 5px #000;font-size: 70px;padding:20px 0 0 20px;}
+  #phone-view ._widget-clock ._fmt12 {font-size:40px;}
+  #phone-view ._widget-clock ._date {font-size:16px;}
 
 
   @-webkit-keyframes bubble-up1{ 0% {top: 130%;} 50% {margin-left: -10%;} 100% {top: 0%;opacity: 0.2} }
@@ -136,7 +141,7 @@
 
   #phone-battery {
     width: 20px;height: 10px;border-radius: 1px;background: #000;border: 1px solid #24b324;
-    float: right;margin: 4px 4px 0 0;padding: 1px;
+    float: right;margin: 4px 4px 0 0;padding: 1px;position: relative;
   }
 
   #phone-battery:after { content: '';display: block;background: #24B324;
@@ -144,6 +149,10 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+  }
+
+  #phone-battery:before {
+    content: ''; width: 4px; height: 7px; background: #24B324; position: absolute; right: -4px; top: 3px;
   }
 
   #phone-wifi{ float: right;font-size: 21px;margin-right: 10px;}
@@ -159,16 +168,42 @@
   #app-profile dt, #app-profile dd{
     float: left;
   }
-  #app-profile dt {
-    clear:both; width: 90px; text-align: right; margin:0 6px 16px 0;
-  }
-  #app-profile dt:after {content:':'}
-  #app-profile h2 { border-bottom: 1px solid #ccc;font-size: 16px;padding:0 0 4px 0;}
-  #app-profile ._photo-box {}
-  #app-profile ._photo-box dl {float: left;}
-  #app-profile ._photo-box dt {width: 70px;text-align: left;}
-  #app-profile ._photo {float: left;border: 1px solid #ccc;width: 100px; height: 132px;}
+  #app-profile dt { clear: both; margin: 0 6px 6px 0; font-weight: 700; }
+  #app-profile dt:after { content: ':' }
+  #app-profile h2 { border-bottom: 1px solid #ccc; font-size: 16px; padding: 0 0 4px 0; }
+  #app-profile ._photo-box { margin-bottom: 20px; }
+  #app-profile ._photo-box dl { float: left; margin: 0; }
+  #app-profile ._photo { margin-right: 6px; float: left; border: 1px solid #ccc; width: 100px; height: 132px; position: relative;  }
 
+  #app-profile ._photo:hover ._a{
+    -webkit-transform: rotate3d(0,1,0, 180deg);
+    transform: rotate3d(0,1,0, 180deg);
+  }
+
+  #app-profile ._photo:hover ._b{
+    -webkit-transform: rotate3d(0,1,0, 0);
+    transform: rotate3d(0,1,0, 0);
+  }
+
+  #app-profile ._photo ._a,
+  #app-profile ._photo ._b {
+    z-index: 3;
+    position: absolute; width: 100%; height: 100%;
+    background: url(./img/avatar.jpg) no-repeat;
+    background-size: 100px auto;
+    -webkit-transition: all 200ms;
+    transition: all 200ms;
+  }
+
+  #app-profile ._photo ._a{
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  #app-profile ._photo ._b{
+    z-index: 2;background-position: 0 -143px;
+    -webkit-transform: rotate3d(0,1,0, 180deg);
+    transform: rotate3d(0,1,0, 180deg);
+  }
 
 
   #app-exp header,
@@ -213,9 +248,13 @@
         
         <div id="phone-view" class="clearfix">
 
-
           <div class="_widget-clock">
-
+            <div class=" _clock">
+              <div>
+                <span class="_hh"></span>:<span class="_mm"></span><span class=" _fmt12"></span>
+              </div>
+              <div class="_date"> </div>
+            </div>
           </div>
 
           <div class="_app" data-id="profile">
@@ -244,14 +283,39 @@
             <span class="_app-title">Contact</span>
           </div>
 
+          <!--ui-app -->
+
+          <div class="ui-app" id="app-contact">
+            <s class="_scroll-bar"></s>
+            <div class="_scroller">
+              <header>Contact</header>
+              <div class="_main">
+
+              </div>
+            </div>
+          </div>
+
+          <div class="ui-app" id="app-exp">
+            <s class="_scroll-bar"></s>
+            <div class="_scroller">
+              <header>Experience</header>
+              <div class="_main">
+
+              </div>
+            </div>
+          </div>
+
           <div class="ui-app" id="app-profile">
             <s class="_scroll-bar"></s>
             <div class="_scroller">
               <header>Profile</header>
-              <div class=" _main">
+              <div class="_main">
 
                 <div class=" _photo-box clearfix">
-                  <div class=" _photo"></div>
+                  <div class=" _photo">
+                    <s class=" _a"></s>
+                    <s class=" _b"></s>
+                  </div>
                   <dl class="clearfix">
                     <dt>Name</dt>
                     <dd>吳致緯 Rocky Wu</dd>
@@ -264,27 +328,28 @@
 
                     <dt>Birth</dt>
                     <dd>8/23/1983</dd>
+
+                    <dt>Height</dt>
+                    <dd>172 cm</dd>
+
+                    <dt>Weight</dt>
+                    <dd>57 kg</dd>
+
+                    <dt>Star Sign</dt>
+                    <dd>Virgo</dd>
                   </dl>
                 </div>
 
-                <h2>Basic</h2>
+                <h2>Others</h2>
                 <dl class="clearfix">
-
-
-                  <dt>Height</dt>
-                  <dd>172 cm</dd>
-
-                  <dt>Weight</dt>
-                  <dd>56 kg</dd>
-                  
-                  <dt>Marital</dt>
-                  <dd>Unmarried</dd>
-
                   <dt>Military</dt>
                   <dd>Completed</dd>
 
+                  <dt>Marital</dt>
+                  <dd>Unmarried</dd>
+
                   <dt>Interest</dt>
-                  <dd>Movies, Games and Sport</dd>
+                  <dd>Movies, Games, Sport and Coding :)</dd>
 
                   <dt>Languages</dt>
                   <dd>Chinese, English</dd>

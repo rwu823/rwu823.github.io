@@ -27,7 +27,7 @@ define(function(require, exports, module){
   }
 
 
-  var _ = require('/lib/js/_'),
+  var _ = require('/lib/js/util'),
       Bubble = require('./bubble')
 
   require('./$.rTime.js')
@@ -42,6 +42,8 @@ define(function(require, exports, module){
       $fox = $('#fox'),
 
       $notiTime = $('#phone-notification-time'),
+
+      $clock = $('#phone-view ._clock'),
 
       $currentApp = $(),
 
@@ -89,6 +91,9 @@ define(function(require, exports, module){
 
       runTime = function(){
         $notiTime.rTime()
+        $clock.rTime({
+          widget: 1
+        })
       },
 
       init = function(){

@@ -1,7 +1,7 @@
 define(function(require, exports, module){
   'use strict'
 
-  var _ = require('/lib/js/_')
+  var _ = require('/lib/js/util')
 
   $.fn.touchScroll = function(op){
     op = $.extend({
