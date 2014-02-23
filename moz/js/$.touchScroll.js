@@ -148,7 +148,7 @@ define(function(require, exports, module){
 
           $doc.off('mousemove.touchMove')
 
-          if( duration < 30 ) movement()
+          if( duration < 100 ) movement()
 
 //            if( isOverView ) overMovement()
 

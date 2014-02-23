@@ -22,7 +22,7 @@ define(function(require, exports, module){
 
       setTimeout(function(){
         callback()
-      }, duration + 10)
+      }, duration + 200)
     })
   }
 
@@ -66,14 +66,27 @@ define(function(require, exports, module){
 
       },
 
+      skillAnimate = function(){
+        $('._skills', $currentApp).each(function(){
+          var $this = $(this),
+              dataid = $this.data('id')
+
+          $this.addClass('-' + dataid)
+        })
+      },
+
       openApp = function(e){
+
         var $this = $(this),
             appid = $this.data('id')
 
         $currentApp = $('#app-' + appid)
         $currentApp.transition({className: '-show'}, function(){
-          console.log({'$currentApp.touchScroll()': $currentApp.touchScroll()})
+          $currentApp.touchScroll()
+
+          if(appid === 'skill') skillAnimate()
         })
+
       },
 
       backHome = function(e){
@@ -87,6 +100,9 @@ define(function(require, exports, module){
           $('._scroll-bar', $currentApp).removeAttr('style')
         })
 
+        if($currentApp[0].id === 'app-skill'){
+          $('._skills', $currentApp).attr('class', '_skills')
+        }
       },
 
       runTime = function(){
@@ -104,10 +120,14 @@ define(function(require, exports, module){
         }
 
         $phone
-          .on('click', '._app', openApp)
+          .on('click.openApp', '._app', openApp)
           .on('click', '#phone-btn-home', backHome)
+
+//        $('._app[data-id="skill"]', $phone).trigger('click.openApp')
       }
 
   init()
+
+
 
 })

@@ -37,7 +37,7 @@ define(function(require, exports, module){
         Dms = D.getMilliseconds(),
 
         hasRunFirst = 0,
-        firstUpdateMs = ((60-Ds)*1000) + (1000-Dms)
+        firstUpdateMs = (60*1000) - (Ds * 1000 + Dms)
 
     return this.each(function(){
       var $o = $(this),

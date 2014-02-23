@@ -2,8 +2,9 @@
 <meta charset="UTF-8"/>
 <title>Rocky Wu's Resume</title>
 <link rel="shortcut icon" href="/blog/favicon.png">
+<link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
 <style>
-  dd, h2, body {margin: 0;padding: 0;}
+  dd, h2, body, ul, p {margin: 0;padding: 0;}
   html, body, #main { font:12px/1 arial;width: 100%; height: 100%;overflow: hidden; }
   body { margin: 0; padding: 0;  }
 
@@ -26,6 +27,10 @@
   .font-icon.-wifi:after { content:'wifi'; }
   .font-icon.-code:after { content:'code'; }
   .font-icon.-mail:after { content:'mail'; }
+  .font-icon.-github:after { content:'github'; }
+  .font-icon.-phone:after { content:'phone'; }
+  .font-icon.-edit:after { content:'edit'; }
+  .font-icon.-linkedin:after { content:'linkedin'; }
 
 
   .bubble { position: fixed;width: 50px; height: 50px;border: 1px solid rgba(255,255,255,.2);border-radius: 50%;box-shadow: inset 0 0 20px rgba(255,255,255,.7);    }
@@ -175,16 +180,6 @@
   #app-profile ._photo-box dl { float: left; margin: 0; }
   #app-profile ._photo { margin-right: 6px; float: left; border: 1px solid #ccc; width: 100px; height: 132px; position: relative;  }
 
-  #app-profile ._photo:hover ._a{
-    -webkit-transform: rotate3d(0,1,0, 180deg);
-    transform: rotate3d(0,1,0, 180deg);
-  }
-
-  #app-profile ._photo:hover ._b{
-    -webkit-transform: rotate3d(0,1,0, 0);
-    transform: rotate3d(0,1,0, 0);
-  }
-
   #app-profile ._photo ._a,
   #app-profile ._photo ._b {
     z-index: 3;
@@ -205,6 +200,22 @@
     transform: rotate3d(0,1,0, 180deg);
   }
 
+  #app-profile ._photo:hover ._a{
+    -webkit-transform: rotate3d(0,1,0, 180deg);
+    transform: rotate3d(0,1,0, 180deg);
+  }
+
+  #app-profile ._photo:hover ._b {
+    -webkit-transform: rotate3d(0, 1, 0, 0);
+    transform: rotate3d(0, 1, 0, 0);
+  }
+
+  #app-exp ._job{ font-size: 12px;margin-bottom: 20px; }
+  #app-exp ._job-hd {border-bottom: 1px solid #ccc;position: relative;padding-bottom: 4px;line-height:1.3;margin-bottom: 6px;}
+  #app-exp ._job-hd b{font-size: 16px;}
+  #app-exp ._job-hd ._company{color:#555}
+  #app-exp ._job-hd ._period{position: absolute;top: 2px;right: 0;color:#38630A}
+  #app-exp ._job-responsibility ul{ margin-left: 20px;line-height:1.3; }
 
   #app-exp header,
   #phone ._app[data-id="exp"] {
@@ -233,6 +244,32 @@
     background-image: linear-gradient(#653AB4, #58259E);
     background-repeat: no-repeat;
   }
+  #app-contact ._lists{ border-bottom: 1px solid #cccccc;display: block;text-decoration: none;color:#333}
+  #app-contact ._lists .font-icon{ display: inline-block;vertical-align: -8px;color:#949494;font-size: 40px;margin-right: 10px; }
+
+  #app-contact ._lists[data-id="phone"]:hover .font-icon {color:#1572D4}
+  #app-contact ._lists[data-id="mail"]:hover .font-icon {color:#A30002}
+  #app-contact ._lists[data-id="linkedin"]:hover .font-icon {color:#5BA8CF}
+  #app-contact ._lists[data-id="github"]:hover .font-icon {color:#000}
+  #app-contact ._lists[data-id="blog"]:hover .font-icon {color:#FF8E33}
+
+  #app-intro ._main {line-height:1.2;font-family: 'Josefin Sans', sans-serif;font-size: 20px; }
+  #app-intro ._main p {margin-bottom:16px }
+
+  #app-skill ._skills { height: 30px;background: #eee;margin-bottom: 20px;color:#fff;text-shadow: 1px 1px 3px #333; font-weight: 700;
+    background: -webkit-linear-gradient(left,  #369e1f 0%, #c5ed00 50%, #d10000 100%);
+    background: linear-gradient(to right,  #369e1f 0%, #c5ed00 50% ,#d10000 100%);
+    vertical-align: middle;padding-left: 10px;position: relative;overflow: hidden;
+  }
+  #app-skill ._skills:after{content:'';display: inline-block;vertical-align: middle;height: 100%;}
+  #app-skill ._skills ._masks{position: absolute;width: 100%;height: 100%;background: #fff;left:0;top:0;transition:all 700ms}
+
+  #app-skill ._skills.-html ._masks {left: 85%;}
+  #app-skill ._skills.-css ._masks {left: 82%;}
+  #app-skill ._skills.-js ._masks {left: 75%;}
+  #app-skill ._skills.-nodejs ._masks {left: 72%;}
+  #app-skill ._skills.-git ._masks {left: 62%;}
+  #app-skill ._skills.-ng ._masks {left: 78%;}
 
 </style>
 
@@ -291,6 +328,40 @@
               <header>Contact</header>
               <div class="_main">
 
+                <a class=" _lists" data-id="phone">
+                  <div class="font-icon -phone"></div> 0926-510-776
+                </a>
+
+                <a class=" _lists" data-id="mail" href="mailto:rocky823@gmaiil.com" target="_blank">
+                  <div class="font-icon -mail"></div> rocky823@gmaiil.com
+                </a>
+
+                <a class=" _lists" data-id="linkedin" href="http://www.linkedin.com/pub/rocky-wu/4b/159/109" target="_blank">
+                  <div class="font-icon -linkedin"></div> Linkedin
+                </a>
+
+                <a class=" _lists" data-id="github" href="https://github.com/rwu823" target="_blank">
+                  <div class="font-icon -github"></div> Github
+                </a>
+
+                <a class=" _lists" data-id="blog" href="http://rwu823.github.io/blog/index.htm" target="_blank">
+                  <div class="font-icon -edit"></div> Blog
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="ui-app" id="app-skill">
+            <s class="_scroll-bar"></s>
+            <div class="_scroller">
+              <header>Skill</header>
+              <div class="_main">
+                <div data-id="html" class="_skills"><s class="_masks"></s>HTML</div>
+                <div data-id="css" class="_skills"><s class="_masks"></s>CSS</div>
+                <div data-id="js" class="_skills"><s class="_masks"></s>Javascript</div>
+                <div data-id="ng" class="_skills"><s class="_masks"></s>AngularJS</div>
+                <div data-id="nodejs" class="_skills"><s class="_masks"></s>NodeJs</div>
+                <div data-id="git" class="_skills"><s class="_masks"></s>Git</div>
               </div>
             </div>
           </div>
@@ -301,6 +372,75 @@
               <header>Experience</header>
               <div class="_main">
 
+                <div class="_job">
+                  <div class="_job-hd">
+                    <b>Front End Lead</b>
+                    <div class="_company">FriendFinder Networks Inc.</div>
+                    <div class="_period">9 / 2012 – Present</div>
+                  </div>
+                  <div class=" _job-responsibility">
+                    <ul>
+                      <li>Major projects architecture</li>
+                      <li>High quality javascript code</li>
+                      <li>Hire new FrontEnd</li>
+                      <li>Training / Mentoring junior developers</li>
+                      <li>Team code review</li>
+                      <li>Formulate code guideline</li>
+                      <li>Development the internal tool</li>
+                      <li>The efficient work flow of FrontEnd</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="_job">
+                  <div class="_job-hd">
+                    <b>Front End Developer</b>
+                    <div class="_company">FriendFinder Networks Inc.</div>
+                    <div class="_period">11 / 2011 – 9 / 2012</div>
+                  </div>
+                  <div class="_job-responsibility">
+                    <ul>
+                      <li>Projects development</li>
+                      <li>Improve user interactive experience</li>
+                      <li>Large website front-end development</li>
+                      <li>RESTful API / Ajax development</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="_job">
+                  <div class="_job-hd">
+                    <b>Mobile Front End</b>
+                    <div class="_company">FriendFinder Networks Inc.</div>
+                    <div class="_period">6 / 2011 – 11 / 2011</div>
+                  </div>
+                  <div class="_job-responsibility">
+                    <ul>
+                      <li>Cross-platform and browser development</li>
+                      <li>Improve user interactive experience on mobile sites</li>
+                      <li>Improve performance of mobile sites</li>
+                      <li>Large mobile website front-end development</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="_job">
+                  <div class="_job-hd">
+                    <b>Web Developer</b>
+                    <div class="_company">Lin Quan Enterprise co. ltd</div>
+                    <div class="_period">3 / 2010 – 4 / 2011</div>
+                  </div>
+                  <div class="_job-responsibility">
+                    <ul>
+                      <li>The animation of banner</li>
+                      <li>Build products data</li>
+                      <li>Products search feature</li>
+                      <li>Enhance user experience of the sites</li>
+                      <li>Page refactoring</li>
+                      <li>HTML/CSS Layout</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -359,6 +499,33 @@
             </div>
           </div>
 
+          <div class="ui-app" id="app-intro">
+            <s class="_scroll-bar"></s>
+            <div class="_scroller">
+              <header>Introduction</header>
+              <div class="_main">
+                <p>
+                  I have high of enthusiasm for web development, enjoy thinking about the program logic.
+                  I also think theory must not be divorced from practice.
+                </p>
+                <p>
+                  Be highly organized and efficiency of do some things, So I also like to develop the tools for my self.
+                </p>
+                <p>Have a strong desire for knowledge and learning spirit.</p>
+                <p>
+                  I am a perfectionist and have the same high standard requirements by my self.
+                </p>
+                <p>
+                  The responsibility, the good faith and the will is my self request standard.
+                </p>
+
+                <p>
+                  I had experience in large web site front-end and mobile development, owning a good concept of Javascript.
+                </p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
       <div id="phone-volume">
@@ -373,8 +540,7 @@
 </div>
 
 <script src="/lib/js/sea.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <script>
   !function(){
     'use strict';
