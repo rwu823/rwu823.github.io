@@ -49,7 +49,7 @@ define(function(require, exports, module){
 
       frames = function(){
         Bubble({
-          counts: 10
+          counts: 5
         })
 
         setTimeout(function(){
