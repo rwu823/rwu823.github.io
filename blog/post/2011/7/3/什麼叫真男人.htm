@@ -1,0 +1,38 @@
+<!DOCTYPE html><meta charset="utf-8"><link rel="stylesheet" href="/lib/css/normalize.css"><link rel="stylesheet" href="/blog/home.css"><link rel="shortcut icon" href="/blog/favicon.png"><title>指尖上的前端 - 什麼叫真男人</title><div id="main"><header><div id="hd"><div id="title"><h1><a href="/blog/index.htm">指尖上的前端</a></h1></div><input id="sh" placeholder="Search blog"></div></header><div id="bd"><div id="content"><aside> <img id="avatar" src="/blog/avatar.png" alt="RoCky Wu" title="RoCky Wu"></aside><article><div id="article-post"><div class="article-hd"><h2 class="_title">什麼叫真男人</h2><div class="_time">2011/7/3</div><div class="_tag"><span class="_tags">Life</span></div></div><div id="article-post-main"><iframe width="659" height="371" src="http://www.youtube.com/embed/yOJPTuweEjI" frameborder="0" allowfullscreen></iframe><p>我是個不追星的人，也不會特別喜歡或討厭哪個明星。但不知道從哪時起就漸漸被老蕭的聲音、氣質所吸引。
+</p><p>喜歡老蕭對唱歌的熱情、努力，舞台上震懾全場的氣勢，展現出來的自信與霸氣又不失純真的可愛大男孩氣質。這是一個打從骨子裡熱愛唱歌有夢想的人才會散發出來的魅力。
+</p><p>每當在生活或工作上遇到挫折或疲憊時，就會 follow 一下老蕭的影片，然後每次看完心裡總是感動，就會告訴自己說有人可以這麼努力，為什麼我不行。於是真的又熱血沸騰了耶 哈哈
+</p><div class="slogan">人之所以能，是因為相信能 – 維吉爾 Virgil</div></div></div><div id="disqus_thread"></div></article></div></div><footer></footer></div><script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script><script src="http://cdn.staticfile.org/seajs/2.1.1/sea.js"></script><script>seajs
+  .use('/blog/init.js')
+  .use('/lib/js/socket-reload')
+  </script><script>;(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-4476856-21', 'rwu823.github.io');
+ga('send', 'pageview');
+</script><script>'use strict'
+if( !/^localhost/i.test(location.host) ){
+  seajs.use('//rwu-blog.disqus.com/embed.js')
+}
+seajs.use('/lib/js/load', function(load){
+  load.codemirror({
+    runmode : true
+  }, function(){
+  
+    var type = {
+      js: 'text/javascript',
+      htm: 'text/html',
+      sh: 'text/x-sh',
+      css: 'text/css'
+    }
+    
+    $('#article-post-main pre._code').each(function(){
+      var $this = $(this)              
+      
+      $this.addClass('cm-s-default')
+      CodeMirror.runMode( $this.text(), type[$this.attr('type')], this );
+      
+    })
+  })
+})</script>

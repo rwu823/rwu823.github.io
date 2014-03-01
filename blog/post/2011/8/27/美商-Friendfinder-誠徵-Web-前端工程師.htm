@@ -1,0 +1,46 @@
+<!DOCTYPE html><meta charset="utf-8"><link rel="stylesheet" href="/lib/css/normalize.css"><link rel="stylesheet" href="/blog/home.css"><link rel="shortcut icon" href="/blog/favicon.png"><title>指尖上的前端 - 美商 Friendfinder 誠徵 Web 前端工程師</title><div id="main"><header><div id="hd"><div id="title"><h1><a href="/blog/index.htm">指尖上的前端</a></h1></div><input id="sh" placeholder="Search blog"></div></header><div id="bd"><div id="content"><aside> <img id="avatar" src="/blog/avatar.png" alt="RoCky Wu" title="RoCky Wu"></aside><article><div id="article-post"><div class="article-hd"><h2 class="_title">美商 Friendfinder 誠徵 Web 前端工程師</h2><div class="_time">2011/8/27</div><div class="_tag"><span class="_tags">Life</span></div></div><div id="article-post-main"><p>敝公司要強力擴大團隊囉，Web Front-End Engineer(F2E 前端工程師) 我認為這是一個最難找到"合適"人選之一的位置，
+基本上 F2E 是因為 Internet 的興起與快速發展所誕生出來的，傳統製做網站的過程中，功能與需求並沒有太複雜，
+所以往往都是設計 Layout 完頂多再切個版就到後端套程式了，但如今網際網路的應用與發展已經不可同日而語了，
+需求的是更迅速地與使用者互動應對與更具親和更有趣的用戶體驗。
+</p><p>有興趣的人，更可以看看 <a href="http://evolutionofweb.appspot.com/"> Google 製作的 Internet 與 Browsers 發展史</a>，
+如果看完後你覺得熱血沸騰，那恭喜你可以繼續往下跳入火坑了 :)
+</p><p>好拉進入重點，個人認為前端工程師最重要的二個特質：
+</p><strong>紮實的觀念</strong><p>知道何謂前端工程？前端工程師該做什麼？知道自己要什麼？技術的廣度與深度，你會的是什麼有多深。不要認為前端工程師只要懂"前端"就足夠了。
+</p><strong>不死的熱情</strong><p>坦白說，我覺得前端工程師還蠻累的，要有耐心的處理網頁上px間的差距，還要細心的觀察細微的事物，需要關注的技術很多又很廣。所以一定要熱愛前端、有呈現完美瀏覽體驗給用戶跟確保代碼建壯發展交付到後端的使命，這樣才能從這份工作上面找到成就感。
+</p><p>我們的前端工程師有分為二個方向，桌面跟移動網站(Mobile)開發，二個方向所要求的技術與專精也不太相同，傳統的桌面網站開發比較注重的是跨瀏覽器的兼容實現與團隊的溝通協作等。而 Mobile 網站的開發，更注重的是新技術的關注與實踐。二邊都非常刺激有趣:b
+</p><p>接下來要講可以吸引你來的部分了:b
+</p><ul><li class="_dot">可以接觸到國際級大網站架構</li><li class="_dot">公司很重視員工的職能發展，可購買工作相關書藉、參加相關訓練課程...等</li><li class="_dot">工作氣氛歡樂、環境配備佳，同事感情融洽</li><li class="_dot">部門不定期聚餐</li><li class="_dot">年度15天全薪病假</li><li class="_dot">第一年直接就特休假可用</li></ul><p><img src="test-devices.jpg"></p><p>看到紅圈圈那些酷炫的科技產品了嗎？心動的話就趕快把履歷表與作品集丟至 <a href="mailto:rwu.tw@ffn.com">rwu.tw@ffn.com</a></p></div></div><div id="disqus_thread"></div></article></div></div><footer></footer></div><script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script><script src="http://cdn.staticfile.org/seajs/2.1.1/sea.js"></script><script>seajs
+  .use('/blog/init.js')
+  .use('/lib/js/socket-reload')
+  </script><script>;(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-4476856-21', 'rwu823.github.io');
+ga('send', 'pageview');
+</script><script>'use strict'
+if( !/^localhost/i.test(location.host) ){
+  seajs.use('//rwu-blog.disqus.com/embed.js')
+}
+seajs.use('/lib/js/load', function(load){
+  load.codemirror({
+    runmode : true
+  }, function(){
+  
+    var type = {
+      js: 'text/javascript',
+      htm: 'text/html',
+      sh: 'text/x-sh',
+      css: 'text/css'
+    }
+    
+    $('#article-post-main pre._code').each(function(){
+      var $this = $(this)              
+      
+      $this.addClass('cm-s-default')
+      CodeMirror.runMode( $this.text(), type[$this.attr('type')], this );
+      
+    })
+  })
+})</script>

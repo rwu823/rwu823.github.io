@@ -1,0 +1,36 @@
+<!DOCTYPE html><meta charset="utf-8"><link rel="stylesheet" href="/lib/css/normalize.css"><link rel="stylesheet" href="/blog/home.css"><link rel="shortcut icon" href="/blog/favicon.png"><title>指尖上的前端 - 今年聽到最開心的一句話</title><div id="main"><header><div id="hd"><div id="title"><h1><a href="/blog/index.htm">指尖上的前端</a></h1></div><input id="sh" placeholder="Search blog"></div></header><div id="bd"><div id="content"><aside> <img id="avatar" src="/blog/avatar.png" alt="RoCky Wu" title="RoCky Wu"></aside><article><div id="article-post"><div class="article-hd"><h2 class="_title">今年聽到最開心的一句話</h2><div class="_time">2012/6/5</div><div class="_tag"><span class="_tags">Life</span></div></div><div id="article-post-main"><p>雖然今年才過一半，但我想很難聽到比這句更開心的話了 哈哈
+</p><p><span class="_code">我覺得身為前端工程師，就是要像 Rocky 這樣，外表簡約內斂，內心卻熱血澎湃。</span></p></div></div><div id="disqus_thread"></div></article></div></div><footer></footer></div><script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script><script src="http://cdn.staticfile.org/seajs/2.1.1/sea.js"></script><script>seajs
+  .use('/blog/init.js')
+  .use('/lib/js/socket-reload')
+  </script><script>;(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-4476856-21', 'rwu823.github.io');
+ga('send', 'pageview');
+</script><script>'use strict'
+if( !/^localhost/i.test(location.host) ){
+  seajs.use('//rwu-blog.disqus.com/embed.js')
+}
+seajs.use('/lib/js/load', function(load){
+  load.codemirror({
+    runmode : true
+  }, function(){
+  
+    var type = {
+      js: 'text/javascript',
+      htm: 'text/html',
+      sh: 'text/x-sh',
+      css: 'text/css'
+    }
+    
+    $('#article-post-main pre._code').each(function(){
+      var $this = $(this)              
+      
+      $this.addClass('cm-s-default')
+      CodeMirror.runMode( $this.text(), type[$this.attr('type')], this );
+      
+    })
+  })
+})</script>

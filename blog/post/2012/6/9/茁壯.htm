@@ -1,0 +1,39 @@
+<!DOCTYPE html><meta charset="utf-8"><link rel="stylesheet" href="/lib/css/normalize.css"><link rel="stylesheet" href="/blog/home.css"><link rel="shortcut icon" href="/blog/favicon.png"><title>指尖上的前端 - 茁壯</title><div id="main"><header><div id="hd"><div id="title"><h1><a href="/blog/index.htm">指尖上的前端</a></h1></div><input id="sh" placeholder="Search blog"></div></header><div id="bd"><div id="content"><aside> <img id="avatar" src="/blog/avatar.png" alt="RoCky Wu" title="RoCky Wu"></aside><article><div id="article-post"><div class="article-hd"><h2 class="_title">茁壯</h2><div class="_time">2012/6/9</div><div class="_tag"><span class="_tags">Life</span><span class="_tags">Work</span></div></div><div id="article-post-main"><p>來到 FFN 也一年了，時間過得很快，這一年裡成長很多，無論是在職場上看事情的角度與層面，技術方面尤其是對 UNIX Like 的東西，有大量的接觸與了解，雖然目前程度還是相對不足的:P。
+</p><p>而在前端技術方面，這一年裡最大收獲就是手機網站的開發經驗，移動市場很顯而易見的是現在與未來的趨勢(雖然我個人還是沒智慧型手機..||)而且會愈來愈夯，但是台灣企業真正投入的大部分還是以 App 為主至於 Web 還是不多，所以真的很開心自己能有這份珍貴的經歷，有了移動網站開發的經驗後，再回過頭來想想傳統的桌上型網站，思考融合之後會有一種技術上昇華的快感。
+</p><p>再來就是 Coding 技巧與思維，拜公司的 Templates 所賜，( Tempaltes 是一個極其難用且沒有 highlight，有些人因為這個而離職) ，個人的邏輯思考、寫代碼的細膩程度、耐心、debug 功力、工作效率等等...我都覺得比一年前大有進步 :)
+</p><p>再來最喜歡的就是，公司因為業務廣所以各領域神人很多，很喜歡跟同事學習自己不熟悉的領域，或是探討著相關的技術，要學的還是好多好多，果然"生也有涯~知也無涯"
+</p><div class="slogan">希望有天我可以在這裡發表 "卓越"</div></div></div><div id="disqus_thread"></div></article></div></div><footer></footer></div><script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script><script src="http://cdn.staticfile.org/seajs/2.1.1/sea.js"></script><script>seajs
+  .use('/blog/init.js')
+  .use('/lib/js/socket-reload')
+  </script><script>;(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-4476856-21', 'rwu823.github.io');
+ga('send', 'pageview');
+</script><script>'use strict'
+if( !/^localhost/i.test(location.host) ){
+  seajs.use('//rwu-blog.disqus.com/embed.js')
+}
+seajs.use('/lib/js/load', function(load){
+  load.codemirror({
+    runmode : true
+  }, function(){
+  
+    var type = {
+      js: 'text/javascript',
+      htm: 'text/html',
+      sh: 'text/x-sh',
+      css: 'text/css'
+    }
+    
+    $('#article-post-main pre._code').each(function(){
+      var $this = $(this)              
+      
+      $this.addClass('cm-s-default')
+      CodeMirror.runMode( $this.text(), type[$this.attr('type')], this );
+      
+    })
+  })
+})</script>

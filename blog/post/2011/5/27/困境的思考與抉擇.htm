@@ -1,0 +1,40 @@
+<!DOCTYPE html><meta charset="utf-8"><link rel="stylesheet" href="/lib/css/normalize.css"><link rel="stylesheet" href="/blog/home.css"><link rel="shortcut icon" href="/blog/favicon.png"><title>指尖上的前端 - 困境的思考抉擇</title><div id="main"><header><div id="hd"><div id="title"><h1><a href="/blog/index.htm">指尖上的前端</a></h1></div><input id="sh" placeholder="Search blog"></div></header><div id="bd"><div id="content"><aside> <img id="avatar" src="/blog/avatar.png" alt="RoCky Wu" title="RoCky Wu"></aside><article><div id="article-post"><div class="article-hd"><h2 class="_title">困境的思考抉擇</h2><div class="_time">2011/5/27</div><div class="_tag"><span class="_tags">Life</span></div></div><div id="article-post-main"><p>最近發生了一些事情，坦白講讓我心裡很不舒服，情緒也變得很down，所以常常思考自己到底要的是什麼？
+人的一生難免會有一些時期需要做重要的抉擇，正因為這些選擇讓許多人陷入困境的泥沼中，深怕踩錯一步就萬劫不復，所以貪心的人們總是希望可以兩全齊美，深怕選了這邊而失去那邊的優點，選了那邊又得不到這邊的甜處，照成了無窮盡的迴圈而焦慮不安。</p><p>以上正是自已的心聲與寫照，我承認自己是貪心什麼都想要、也是個得失心很重的人。尤其是在投入很多時間與精力的事情上，所以我很討厭選擇，面臨抉擇時，更會小心謹慎猶豫不前。但這樣真的好嗎？
+人又怎麼能預知未來知道自己選的對不對呢？</p><p>前幾天看到一篇故事<br/>
+「有一隻小鹿在森林裡迷路了，口很渴想要找水喝，終於找到了二口井，不過最後還是渴死了。因為牠一直猶豫該喝哪口井。」<br/>
+唉~實在是太諷刺拉，簡直跟我現在的處境一樣。</p><p>佛曰：「捨得捨得 有捨才有得」，有時候就別太執著了，換個角度想，轉換一下心態、就會海闊天空的。最重要的是要知道自己要什麼，相信自己，勇往直前就對了。</p><p>在這邊要特別謝謝<span class="_name">怡君</span>，對我在工作上的包容，也常常聽我想要表達的東西，並認真的跟我討論溝通，從妳身上我也看到了對工作、人生正面積極的態度，跟妳合作的這段日子真的很開心，也祝妳在未來的旅途一帆風順。當然也要感謝那些常常被我纏著抱怨、訴苦的朋友們、還有不管發生什麼事，都會給我無限溫暖的家人，辛苦你們拉。
+</p><div class="slogan">沒有最完美的選擇，只有最適合的選擇</div></div></div><div id="disqus_thread"></div></article></div></div><footer></footer></div><script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script><script src="http://cdn.staticfile.org/seajs/2.1.1/sea.js"></script><script>seajs
+  .use('/blog/init.js')
+  .use('/lib/js/socket-reload')
+  </script><script>;(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-4476856-21', 'rwu823.github.io');
+ga('send', 'pageview');
+</script><script>'use strict'
+if( !/^localhost/i.test(location.host) ){
+  seajs.use('//rwu-blog.disqus.com/embed.js')
+}
+seajs.use('/lib/js/load', function(load){
+  load.codemirror({
+    runmode : true
+  }, function(){
+  
+    var type = {
+      js: 'text/javascript',
+      htm: 'text/html',
+      sh: 'text/x-sh',
+      css: 'text/css'
+    }
+    
+    $('#article-post-main pre._code').each(function(){
+      var $this = $(this)              
+      
+      $this.addClass('cm-s-default')
+      CodeMirror.runMode( $this.text(), type[$this.attr('type')], this );
+      
+    })
+  })
+})</script>
