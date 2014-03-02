@@ -1,0 +1,47 @@
+<!DOCTYPE html><meta charset="utf-8"><link rel="stylesheet" href="/lib/css/normalize.css"><link rel="stylesheet" href="/blog/home.css"><link rel="shortcut icon" href="/blog/favicon.png"><title>指尖上的前端 - 從前端開發看環保</title><div id="main"><header><div id="hd"><div id="title"><h1><a href="/blog/index.htm">指尖上的前端</a></h1></div><input id="sh" placeholder="Search blog"></div></header><div id="bd"><div id="content"><aside> <img id="avatar" src="/blog/avatar.png" alt="RoCky Wu" title="RoCky Wu"></aside><article><div id="article-post"><div class="article-hd"><h2 class="_title">從前端開發看環保</h2><div class="_time">2011/6/26</div><div class="_tag"><span class="_tags">Life</span><span class="_tags">Work</span></div></div><div id="article-post-main"><p>曾經有朋友看到我的簡歷上寫著"愛環保"，提出了疑問說：「愛環保跟你的專業無關，為什麼要這麼寫？」所以很想寫下一篇關於自己的想法。
+</p><p><strong>關於環保中的垃圾分類：</strong> <br>
+首先來談談Web標準吧， <a href="http://www.w3.org/">W3C</a> 所推薦的 <a href="http://www.w3.org/standards/">Web 標準</a>裡面有一段是說：「把結構(Structure)、表現(Presentation)、行為(Behavior) 分離。」
+當然這邊的結構指的就是(X)HTML、表現就是CSS、行為則是JavaScript，這三樣也是組成網頁前端最重要的三個元素。這句話意即該做什麼事的就讓它做什麼，而不是噁心的全部混雜在一起，所以就像環保中的垃圾分類一樣，
+把相同的東西歸類在一起，這樣在資源回收與垃圾管理上，才能夠減輕處理者的負擔並得到最大的效益。
+
+</p><p><strong>關於環保中的節能減碳：</strong> <br>
+在Web前端工程中有一大部分是在追求 Performance 的表現，這就意即有良好的效能可以大大降低 User CPU 的負擔，
+進而達到減少二氧化碳排放的功效，節能減碳愛地球阿，看到這邊還能不為全天下偉大辛苦的前端開發者致敬嗎(自肥XD)。
+</p><p><strong>寫在最後：</strong> <br>
+拿這兩件事來相提並論確實是偏執了，不過真的也希望喚起大家對環保與 Web 標準的重視，Web 髒掉了還不打緊，可是地球只有一個，由其最近日本大地震後所引起的各種天災，
+覺得很感慨也蠻令人省思的，地球已經發出抗議的聲浪了，大家真的要好好愛護地球阿。
+</p><div class="slogan">這不是職業病，這不是職業病</div></div></div><div id="disqus_thread"></div></article></div></div><footer></footer></div><script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script><script src="http://cdn.staticfile.org/seajs/2.1.1/sea.js"></script><script>seajs
+  .use('/blog/init.js')
+  .use('/lib/js/socket-reload')
+  </script><script>;(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-4476856-21', 'rwu823.github.io');
+ga('send', 'pageview');
+</script><script>'use strict'
+if( !/^localhost/i.test(location.host) ){
+  seajs.use('//rwu-blog.disqus.com/embed.js')
+}
+seajs.use('/lib/js/load', function(load){
+  load.codemirror({
+    runmode : true
+  }, function(){
+  
+    var type = {
+      js: 'text/javascript',
+      htm: 'text/html',
+      sh: 'text/x-sh',
+      css: 'text/css'
+    }
+    
+    $('#article-post-main pre._code').each(function(){
+      var $this = $(this)              
+      
+      $this.addClass('cm-s-default')
+      CodeMirror.runMode( $this.text(), type[$this.attr('type')], this );
+      
+    })
+  })
+})</script>
