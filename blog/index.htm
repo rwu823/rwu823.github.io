@@ -10,14 +10,14 @@ ga('create', 'UA-4476856-21', 'rwu823.github.io');
 ga('send', 'pageview');
 </script><script>!function($){
 
-  if( /^localhost/i.test(location.host) ) return;
+  if( 1 || /^localhost/i.test(location.host) ) return;
   
   var $articles = $('#article_lists .article-hd')
   
   $.ajax({
     url: "https://disqus.com/api/3.0/threads/set.jsonp",
     dataType: 'jsonp',
-    data: { 
+    data: {
       api_key: 'uRl5S8tyYnkpsYK3lo3aZwbCxZk6d8mr6kqptBukiz84rCCSQHOXVdFwRirBIs5K', 
       forum : 'rwu-blog',
       thread : (function(arr){
