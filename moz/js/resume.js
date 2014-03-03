@@ -30,6 +30,7 @@ define(function(require, exports, module){
   var _ = require('/lib/js/util'),
       Bubble = require('./bubble')
 
+
   require('./$.rTime.js')
   require('./$.touchScroll.js')
 
@@ -47,7 +48,13 @@ define(function(require, exports, module){
 
       $currentApp = $(),
 
-      frames = function(){
+      qs = _.querystring(),
+
+      frames = function(op){
+        op = $.extend({
+          showFox: 1
+        }, op)
+
         Bubble({
           counts: 5
         })
@@ -60,9 +67,11 @@ define(function(require, exports, module){
           $phone.addClass('-fall')
         }, 1000)
 
-        setTimeout(function(){
-          $fox.addClass('-fox-shine')
-        }, 2500)
+        if(op.showFox !== '0'){
+          setTimeout(function(){
+            $fox.addClass('-fox-shine')
+          }, 2500)
+        }
 
       },
 
@@ -115,15 +124,20 @@ define(function(require, exports, module){
       init = function(){
 
         if(!isDebug){
-          frames()
+          frames({
+            showFox: qs.fox
+          })
           runTime()
         }
+
+        console.log(qs)
 
         $phone
           .on('click.openApp', '._app', openApp)
           .on('click', '#phone-btn-home', backHome)
 
 //        $('._app[data-id="skill"]', $phone).trigger('click.openApp')
+
       }
 
   init()
