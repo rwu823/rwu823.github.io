@@ -130,8 +130,6 @@ define(function(require, exports, module){
           runTime()
         }
 
-        console.log(qs)
-
         $phone
           .on('click.openApp', '._app', openApp)
           .on('click', '#phone-btn-home', backHome)
