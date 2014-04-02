@@ -1,0 +1,45 @@
+<!DOCTYPE html><meta charset="utf-8"><link rel="stylesheet" href="/lib/css/normalize.css"><link rel="stylesheet" href="/blog/home.css"><link rel="shortcut icon" href="/blog/favicon.png"><title>指尖上的前端 - 令人失望的用戶體驗: Yahoo 台灣 - 首頁中鍵點擊</title><div id="main"><header><div id="hd"><div id="title"><h1><a href="/blog/index.htm">指尖上的前端</a></h1></div><input id="sh" placeholder="Search blog"></div></header><div id="bd"><div id="content"><aside> <img id="avatar" src="/blog/avatar.png" alt="RoCky Wu" title="RoCky Wu"></aside><article><div id="article-post"><div class="article-hd"><h2 class="_title">令人失望的用戶體驗: Yahoo 台灣 - 首頁中鍵點擊</h2><div class="_time">2014/3/31</div><div class="_tag"><span class="_tags">UX</span></div></div><div id="article-post-main"><p>一直很想發一篇來吐一下 <a href="//tw.yahoo.com">Yahoo 台灣</a>首頁令人不敢恭維的用戶體驗，這個問題是發生在 Chrome 用滑鼠<span class="_code">中鍵</span>點擊連結時…
+</p><p>先到這邊暫停一下，來問問大家覺得接下來預期的行為是什麼？很簡單，你我或是任何 Browser 的重度使用者都知道，
+這個中鍵點擊的行為讓我們預期的動作應該要是<span class="_code">背景打開新視窗</span>，這也是各大瀏覽器標準的預設行為。<br>
+背景打開新視窗意謂著不會影響到目前瀏覽頁的視野，閱讀也不會被中斷，
+但是 Y! 卻大搖大擺的把本頁都導走了，你說這氣不氣人，使用者就是不想被導走才用中鍵點擊，最後得到的結果就是本頁被導走的，難勉令人心生不爽。
+</p><p>這只是其中一點，其實近年來 Yahoo 看到的體驗問題不勝枚舉，曾經的業界前驅，也是國際型大網站，實在是令人感嘆阿。
+</p><p>我覺得不管有什麼多偉大的業務因素考量，只要是有違背用戶預期行為的方式都是非常不可取要盡量去避免的。
+</p><p>現在的資訊日新月異，行動裝置與 APP 也大爆發，用戶的使用習慣是會被養成與寵壞的，要做好產品不只是要實實在在的，體驗也是非常重要的一環。
+</p><h3>延伸閱讀</h3><p><a href="http://techorange.com/2014/03/10/developer-should-focus-on-ux-more/">Coder 別只想做功能，用戶體驗才是產品的命啊</a> <br>
+<a href="http://www.bnext.com.tw/article/view/id/31067">產品設計靠邊，用戶體驗創新才是王道</a>
+</p><div class="slogan">用戶體驗才是產品的未來</div></div></div><div id="disqus_thread"></div></article></div></div><footer></footer></div><script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script><script src="http://cdn.staticfile.org/seajs/2.1.1/sea.js"></script><script>seajs
+  .use('/blog/init.js')
+  .use('/lib/js/socket-reload')
+  </script><script>;(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-4476856-21', 'rwu823.github.io');
+ga('send', 'pageview');
+</script><script>'use strict'
+if( !/^localhost/i.test(location.host) ){
+  seajs.use('//rwu-blog.disqus.com/embed.js')
+}
+seajs.use('/lib/js/load', function(load){
+  load.codemirror({
+    runmode : true
+  }, function(){
+  
+    var type = {
+      js: 'text/javascript',
+      htm: 'text/html',
+      sh: 'text/x-sh',
+      css: 'text/css'
+    }
+    
+    $('#article-post-main pre._code').each(function(){
+      var $this = $(this)              
+      
+      $this.addClass('cm-s-default')
+      CodeMirror.runMode( $this.text(), type[$this.attr('type')], this );
+      
+    })
+  })
+})</script>
