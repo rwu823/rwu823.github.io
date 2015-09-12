@@ -31,6 +31,7 @@
   .font-icon.-phone:after { content:'phone'; }
   .font-icon.-edit:after { content:'edit'; }
   .font-icon.-linkedin:after { content:'linkedin'; }
+  .font-icon.-slider:after { content:'slider'; }
 
 
   .bubble { position: fixed;width: 50px; height: 50px;border: 1px solid rgba(255,255,255,.2);border-radius: 50%;box-shadow: inset 0 0 20px rgba(255,255,255,.7);    }
@@ -252,6 +253,7 @@
   #app-contact ._lists[data-id="linkedin"]:hover .font-icon {color:#5BA8CF}
   #app-contact ._lists[data-id="github"]:hover .font-icon {color:#000}
   #app-contact ._lists[data-id="blog"]:hover .font-icon {color:#FF8E33}
+  #app-contact ._lists[data-id="slider"]:hover .font-icon {color:#f54876}
 
   #app-intro ._main {line-height:1.2;font-family: 'Josefin Sans', sans-serif;font-size: 20px; }
   #app-intro ._main p {margin-bottom:16px }
@@ -323,7 +325,7 @@
           <!--ui-app -->
 
           <div class="ui-app" id="app-contact">
-            <s class="_scroll-bar"></s>
+            <!--<s class="_scroll-bar"></s>-->
             <div class="_scroller">
               <header>Contact</header>
               <div class="_main">
@@ -347,12 +349,16 @@
                 <a class=" _lists" data-id="blog" href="http://rwu823.github.io/blog/index.htm" target="_blank">
                   <div class="font-icon -edit"></div> Blog
                 </a>
+
+                <a class=" _lists" data-id="slider" href="https://slides.com/rwu" target="_blank">
+                  <div class="font-icon -slider"></div> Slides
+                </a>
               </div>
             </div>
           </div>
 
           <div class="ui-app" id="app-skill">
-            <s class="_scroll-bar"></s>
+            <!--<s class="_scroll-bar"></s>-->
             <div class="_scroller">
               <header>Skills</header>
               <div class="_main">
@@ -367,7 +373,7 @@
           </div>
 
           <div class="ui-app" id="app-exp">
-            <s class="_scroll-bar"></s>
+            <!--<s class="_scroll-bar"></s>-->
             <div class="_scroller">
               <header>Experience</header>
               <div class="_main">
@@ -495,7 +501,7 @@
           </div>
 
           <div class="ui-app" id="app-profile">
-            <s class="_scroll-bar"></s>
+            <!--<s class="_scroll-bar"></s>-->
             <div class="_scroller">
               <header>Profile</header>
               <div class="_main">
@@ -558,10 +564,20 @@
           </div>
 
           <div class="ui-app" id="app-intro">
-            <s class="_scroll-bar"></s>
+            <!--<s class="_scroll-bar"></s>-->
             <div class="_scroller">
               <header>Introduction</header>
               <div class="_main">
+                <p>
+                  I have rich experience in large web site Front-End and mobile development,
+                  and owning a good concept of Javascript.
+                  Get a deep understanding of Javascript OOP programing and design patterns.
+
+                  Also lead Front-End developers to write high quality code and import more efficient workflow.
+                </p>
+                <p>
+                    I'm familiar with Open Source community and contributions experience.
+                </p>
                 <p>
                   I have high of enthusiasm for web development, enjoy thinking about the program logic.
                   I also think theory must not be divorced from practice.
@@ -578,13 +594,6 @@
                   The responsibility, the good faith and the will is my self request standard.
                 </p>
 
-                <p>
-                  I have rich experience in large web site Front-End and mobile development,
-                  and owning a good concept of Javascript.
-                  Get a deep understanding of Javascript OOP programing and design patterns.
-
-                  Also lead Front-End developers to write high quality code and import more efficient workflow.
-                </p>
               </div>
             </div>
           </div>

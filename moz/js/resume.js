@@ -32,7 +32,8 @@ define(function(require, exports, module){
 
 
   require('./$.rTime.js')
-  require('./$.touchScroll.js')
+  //require('./$.touchScroll.js')
+  require('./iscroll.js')
 
   var isDebug = 0//require('./debug')
 
@@ -49,7 +50,9 @@ define(function(require, exports, module){
       $currentApp = $(),
 
       qs = _.querystring(),
+      whoscroll = {
 
+      },
       frames = function(op){
         op = $.extend({
           showFox: 1
@@ -91,7 +94,15 @@ define(function(require, exports, module){
 
         $currentApp = $('#app-' + appid)
         $currentApp.transition({className: '-show'}, function(){
-          $currentApp.touchScroll()
+
+            $currentApp.sroller = new IScroll($currentApp[0], {
+                disableMouse: false,
+                disablePointer: false,
+                scrollbars: true,
+                mouseWheel: true,
+                disableTouch: false
+            })
+
 
           if(appid === 'skill') skillAnimate()
         })
@@ -112,6 +123,8 @@ define(function(require, exports, module){
         if($currentApp[0].id === 'app-skill'){
           $('._skills', $currentApp).attr('class', '_skills')
         }
+        $currentApp.sroller.destroy()
+
       },
 
       runTime = function(){
