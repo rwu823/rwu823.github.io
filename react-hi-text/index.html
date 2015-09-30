@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<meta charset="UTF-8"/>
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+
+<title>React HiText</title>
+<link href="https://fonts.googleapis.com/css?family=Lato:100,300" rel="stylesheet" />
+<!-- inject:css -->
+<link rel="stylesheet" href="../srcs/hash/init.css"/>
+<!-- endinject -->
+<style>
+    body {
+        color: #666;
+    }
+    input:focus{
+        outline: none;
+    }
+
+
+    header{
+        color: #eee;
+        background-image: linear-gradient(to bottom, #1e5799 0%,#7db9e8 100%);
+        height: 200px;
+        display: flex;
+        align-items: center;
+    }
+    h1 {
+        margin: 0;
+        font-size: 60px;
+        font-weight: 100;
+        font-family: Lato;
+        margin: 0 auto;
+    }
+    h1 .highlight{
+        padding:0 5px;
+    }
+    .highlight{
+        color: #000;
+        background: yellow;
+    }
+    #main {
+        width: 700px;
+        margin: 0 auto;
+    }
+    #textbox{
+        line-height: 1.5;
+    }
+    #find {
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 30px;
+        padding-top: 30px;
+        padding-bottom: 10px;
+    }
+    #search{
+        box-sizing: border-box;
+        height: 30px;
+        border: none;
+        padding:0 5px;
+        width: 70%;
+    }
+    #search:focus{
+        border-color: #73afe0
+    }
+    #clean {
+        background: #CE0404;
+        display: inline-block;
+        color: #fff;
+        border-radius: 5px;
+        padding: 5px 8px;
+        cursor: pointer;
+        margin-left: 20px;
+    }
+    #clean:hover {
+        background: #E70606;
+    }
+
+</style>
+<body>
+    <a href="https://github.com/rwu823/react-hi-text"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+    <header>
+        <h1>React <span class="highlight">Hi</span>ghlight Text</h1>
+    </header>
+    <div id="main"></div>
+</body>
+<!-- inject:js -->
+<script src="../srcs/hash/react.js"></script>
+<script src="../srcs/hash/JSXTransformer.js"></script>
+<!-- endinject -->
+<script src="react-hi-text.js"></script>
+
+<script src="./app.js" type="text/jsx"></script>
+
+
+
+<script>
+  ;(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-4476856-23', 'auto');
+  ga('send', 'pageview');
+
+</script>
