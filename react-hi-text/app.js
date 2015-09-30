@@ -7,7 +7,7 @@ var Find = React.createClass({
     render(){
         return (
             <div id="find">
-                <input id="search" placeholder="Type some word..." onKeyUp={this.props.setHighlight}/>
+                <input id="search" placeholder="Type some word...<Enter>" onKeyUp={this.props.setHighlight}/>
                 <label>
                     <input type="checkbox" value="1" onChange={this.props.setCaseSens} /> case-sensitive
                 </label>
